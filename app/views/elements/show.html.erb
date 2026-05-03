@@ -1,0 +1,28 @@
+<%# app/views/elements/show.html.erb %>
+
+<turbo-frame id="detail_panel">
+  <div class="element-detail-content" style="position: relative;">
+    
+    <%# 戻るボタン（×ボタンのように配置） %>
+    <%= link_to root_path(anchor: "reset"), data: { turbo_frame: "detail_panel" }, class: "back-button", style: "position: absolute; top: 0; right: 0; text-decoration: none; font-size: 1.2rem; color: #999;" do %>
+      ✕ 閉じる
+    <% end %>
+
+    <h2 style="margin-top: 0; color: #222;">
+      <span style="font-size: 0.8em; color: #666;">No.<%= @element.atomic_number %></span><br>
+      <%= @element.symbol %> : <%= @element.name %>
+    </h2>
+
+    <table class="detail-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <tr style="border-bottom: 1px solid #eee;"><th style="text-align: left; padding: 8px;">原子量</th><td><%= @element.atomic_weight %></td></tr>
+      <tr style="border-bottom: 1px solid #eee;"><th style="text-align: left; padding: 8px;">カテゴリ</th><td><%= @element.category %></td></tr>
+      <tr style="border-bottom: 1px solid #eee;"><th style="text-align: left; padding: 8px;">融点</th><td><%= @element.melt %> K</td></tr>
+      <tr style="border-bottom: 1px solid #eee;"><th style="text-align: left; padding: 8px;">沸点</th><td><%= @element.boil %> K</td></tr>
+    </table>
+
+    <div style="margin-top: 30px; background: #f0f4f8; padding: 15px; border-radius: 5px; font-size: 0.85rem;">
+      <strong>構造科学メモ:</strong>
+      <p style="margin: 5px 0 0;">ロジスティクスにおける材料工学の観点から、この元素の物理特性を評価します。</p>
+    </div>
+  </div>
+</turbo-frame>

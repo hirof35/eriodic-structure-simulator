@@ -1,0 +1,46 @@
+/* app/assets/stylesheets/elements.scss */
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(18, minmax(50px, 1fr));
+    grid-template-rows: repeat(7, 1fr) 20px repeat(2, 1fr); // 8行目は余白
+    gap: 4px;
+    background-color: #0f172a;
+    padding: 20px;
+    border-radius: 8px;
+  
+    .element-card {
+      aspect-ratio: 1/1;
+      padding: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 4px;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255,255,255,0.1);
+  
+      &.dimmed {
+        opacity: 0.15;
+        filter: grayscale(80%);
+        transform: scale(0.95);
+      }
+  
+      &.active {
+        box-shadow: 0 0 15px rgba(255,255,255,0.2);
+        z-index: 10;
+      }
+  
+      .atomic-number { font-size: 0.7rem; }
+      .symbol { font-size: 1.2rem; font-weight: 800; text-align: center; }
+      .name { font-size: 0.6rem; text-align: center; overflow: hidden; }
+    }
+  
+    /* カテゴリ別配色（一例） */
+    .reactive-nonmetal { background-color: #10b981; }
+    .noble-gas         { background-color: #8b5cf6; }
+    .transition-metal   { background-color: #f59e0b; }
+    .alkali-metal      { background-color: #ef4444; }
+    .lanthanide        { background-color: #ec4899; }
+    .actinide          { background-color: #d946ef; }
+  }

@@ -1,0 +1,92 @@
+/* app/assets/stylesheets/application.css */
+.element-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 上下に分散配置 */
+    padding: 5px;
+    min-height: 80px; /* 高さを統一 */
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .atomic-number {
+    font-size: 0.75rem;
+    text-align: left;
+  }
+  
+  .symbol {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2px 0;
+  }
+  
+  .name {
+    font-size: 0.6rem;
+  }
+  .filter-controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .btn:hover {
+    background: #f0f0f0;
+  }
+  .side-panel {
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 40px);
+    background: #fdfdfd;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .element-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* カード全体をクリック可能にする */
+    border-radius: 4px;
+    transition: transform 0.2s;
+    border: 1px solid #ddd;
+  }
+  
+  .element-link:hover {
+    transform: scale(1.1);
+    z-index: 100; /* 重なり順を一番上にする */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .element-card {
+    padding: 5px;
+    height: 100%;
+    pointer-events: none; /* 親のaタグにクリックを任せる */
+  }
+  /* サイドパネルのテーブルをより見やすく */
+.detail-table th {
+    width: 35%;
+    color: #555;
+    font-weight: 600;
+    background-color: #f8f9fa;
+  }
+  
+  .detail-table td {
+    padding-left: 15px;
+    font-family: 'Courier New', Courier, monospace; /* 数値を等幅フォントに */
+    font-weight: bold;
+    color: #000;
+  }
+  
+  /* 選択中のカードを強調する（オプション） */
+  .element-link:active .element-card {
+    outline: 2px solid #007bff;
+    box-shadow: 0 0 10px rgba(0,123,255,0.5);
+  }
